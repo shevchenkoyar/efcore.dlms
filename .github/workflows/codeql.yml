@@ -1,0 +1,51 @@
+name: CodeQL
+
+on:
+  push:
+    branches: [ "master" ]
+    paths-ignore:
+      - .gitignore
+      - LICENSE
+      - README.md
+  pull_request:
+    branches: [ "master" ]
+    paths-ignore:
+      - .gitignore
+      - LICENSE
+      - README.md
+  schedule:
+    - cron: '00 0 * * 1'
+
+env:
+  DOTNET_VERSION: "9.x"
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      packages: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore EFCore.DLMS.slnx
+
+      - name: Build
+        run: dotnet build EFCore.DLMS.slnx --configuration Release --no-restore
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3

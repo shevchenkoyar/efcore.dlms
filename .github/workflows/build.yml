@@ -1,0 +1,32 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+env:
+  DOTNET_VERSION: "9.x"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout code
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore EFCore.DLMS.slnx
+
+      - name: Build solution
+        run: dotnet build EFCore.DLMS.slnx --configuration Release --no-restore
+
+      - name: Test solution
+        run: dotnet test EFCore.DLMS.slnx --configuration Release --no-restore --no-build
