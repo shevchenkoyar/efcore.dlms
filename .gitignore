@@ -1,0 +1,13 @@
+.DS_Store
+*.resources
+*.suo
+*.user
+*.sln.docstates
+*.userprefs
+/*.nupkg
+.nuget/
+.idea/
+.vs/
+[Bb]in/
+[Oo]bj/
+artifacts/
