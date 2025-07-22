@@ -7,6 +7,7 @@
     <File Path=".github\workflows\codeql.yml" />
   </Folder>
   <Folder Name="/src/">
+    <Project Path="src\EFCore.DLMS.Core\EFCore.DLMS.Core.csproj" Type="Classic C#" />
     <Project Path="src\EFCore.DLMS\EFCore.DLMS.csproj" Type="Classic C#" />
   </Folder>
   <Folder Name="/tests/" />
