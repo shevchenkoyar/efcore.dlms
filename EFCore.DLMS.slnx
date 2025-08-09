@@ -1,0 +1,16 @@
+﻿<Solution>
+  <Folder Name="/GitHub/">
+    <File Path=".github\workflows\codeql-analysis.yml" />
+    <File Path=".github\workflows\build.yml" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+    <File Path="Directory.Packages.props" />
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/EFCore.DLMS/EFCore.DLMS.csproj" Type="Classic C#" />
+    <Project Path="src\EFCore.DLMS.Core\EFCore.DLMS.Core.csproj" Type="Classic C#" />
+  </Folder>
+  <Folder Name="/tests/" />
+</Solution>

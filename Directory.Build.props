@@ -1,0 +1,32 @@
+<Project>
+    <PropertyGroup>
+        <!-- Versions ant targets -->
+        <VersionPrefix>0.1.0</VersionPrefix>
+        <TargetFramework>net9.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+
+        <!-- Quality -->
+        <ImplicitUsings>true</ImplicitUsings>
+        <TreatWarningsAsErrors Condition="'$(Configuration)' == 'Release'">true</TreatWarningsAsErrors>
+        <AnalysisLevel>latest</AnalysisLevel>
+
+        <!-- Documentation and packaging -->
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PackageId>Shevyd.EntityFrameworkCore.DLMS</PackageId>
+        <PackageTags>Shevyd;DLMS;Entity;Framework;Core;entity-framework-core;ef;efcore</PackageTags>
+        <Title>Entity Framework Core provider for DLMS/COSEM</Title>
+        <Description>Entity Framework Core provider for DLMS/COSEM (IEC 62056) smart meters.</Description>
+        <Authors>Yaroslav Shevchenko</Authors>
+        <Company>Yaroslav Shevchenko</Company>
+        <Copyright>Copyright 2025 © Yaroslav Shevchenko</Copyright>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/shevchenkoyar/efcore.dlms</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/shevchenkoyar/efcore.dlms</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+        <!-- Central Package Versions -->
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+</Project>
